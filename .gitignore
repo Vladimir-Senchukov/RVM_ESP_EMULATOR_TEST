@@ -1,19 +1,37 @@
-# Об'єктні файли
-*.o
-*.obj
-*.lo
-
-# Службові файли компіляції
+# Build artifacts
+/build
 *.elf
 *.bin
 *.map
 *.hex
-*.a
-*.d
+*.obj
+*.o
 
-# Каталоги CMake
-/build
+# CMake
 CMakeFiles/
 CMakeCache.txt
 cmake_install.cmake
 Makefile
+
+# VSCode специфічні налаштування (необов'язково)
+.vscode/
+
+# Python віртуальне середовище (якщо створюєш)
+.env/
+venv/
+__pycache__/
+*.pyc
+
+# IDF-specific
+sdkconfig
+sdkconfig.old
+sdkconfig.defaults
+
+# Logs
+*.log
+
+# ESP-IDF кэш або тимчасові файли
+*.orig
+
+# Backup files
+*~
