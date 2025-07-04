@@ -1,0 +1,311 @@
+menu "Project Commands Configuration"
+
+menu "CMD_OPEN_DIAPHRAGM"
+choice
+    prompt "Set CMD_OPEN_DIAPHRAGM status"
+    default CMD_OPEN_DIAPHRAGM_OK
+
+config CMD_OPEN_DIAPHRAGM_OK
+    bool "STATUS_OK"
+config CMD_OPEN_DIAPHRAGM_STATUS_ERROR
+    bool "STATUS_ERROR"
+
+endchoice
+
+config CMD_OPEN_DIAPHRAGM_COMMAND_ANSWER_TIMEOUT
+    int "Command Answer Timeout (ms)"
+    default 1000
+endmenu
+
+menu "CMD_CLOSE_DIAPHRAGM"
+choice
+    prompt "Set CMD_CLOSE_DIAPHRAGM status"
+    default CMD_CLOSE_DIAPHRAGM_OK
+
+config CMD_CLOSE_DIAPHRAGM_OK
+    bool "STATUS_OK"
+config CMD_CLOSE_DIAPHRAGM_STATUS_ERROR
+    bool "STATUS_ERROR"
+
+endchoice
+
+config CMD_CLOSE_DIAPHRAGM_COMMAND_ANSWER_TIMEOUT
+    int "Command Answer Timeout (ms)"
+    default 1000
+endmenu
+
+menu "CMD_LED_GREEN"
+choice
+    prompt "Set CMD_LED_GREEN status"
+    default CMD_LED_GREEN_OK
+
+config CMD_LED_GREEN_OK
+    bool "STATUS_OK"
+config CMD_LED_GREEN_STATUS_ERROR
+    bool "STATUS_ERROR"
+
+endchoice
+
+config CMD_LED_GREEN_COMMAND_ANSWER_TIMEOUT
+    int "Command Answer Timeout (ms)"
+    default 1000
+endmenu
+
+menu "CMD_LED_RED"
+choice
+    prompt "Set CMD_LED_RED status"
+    default CMD_LED_RED_OK
+
+config CMD_LED_RED_OK
+    bool "STATUS_OK"
+config CMD_LED_RED_STATUS_ERROR
+    bool "STATUS_ERROR"
+
+endchoice
+
+config CMD_LED_RED_COMMAND_ANSWER_TIMEOUT
+    int "Command Answer Timeout (ms)"
+    default 1000
+endmenu
+
+menu "CMD_GET_BOTTLE_STATUS"
+choice
+    prompt "Set CMD_GET_BOTTLE_STATUS status"
+    default CMD_GET_BOTTLE_STATUS_OK
+
+config CMD_GET_BOTTLE_STATUS_OK
+    bool "STATUS_OK"
+config CMD_GET_BOTTLE_STATUS_STATUS_ERROR
+    bool "STATUS_ERROR"
+config CMD_GET_BOTTLE_STATUS_STATUS_NOT_READY
+    bool "STATUS_NOT_READY"
+
+endchoice
+
+choice
+    prompt "Set CMD_IS_HAND_IN error type"
+    default CMD_IS_HAND_IN_OK
+
+config CMD_GET_BOTTLE_STATUS_HEAVY_WEIGHT_ERROR
+    bool "HEAVY_WEIGHT_ERROR"
+config CMD_GET_BOTTLE_STATUS_NO_BARCODE
+    bool "STATUS_ERROR"
+endchoice
+
+config CMD_GET_BOTTLE_STATUS_COMMAND_NOT_READY_TIMEOUT
+    int "Command Answer Timeout (ms)"
+    default 1000
+endmenu
+
+menu "CMD_GET_BARCODE"
+choice
+    prompt "Set CMD_GET_BARCODE status"
+    default CMD_GET_BARCODE_OK
+
+config CMD_GET_BARCODE_OK
+    bool "STATUS_OK"
+config CMD_GET_BARCODE_STATUS_ERROR
+    bool "STATUS_ERROR"
+config CMD_GET_BARCODE_STATUS_STATUS_NOT_READY
+    bool "STATUS_NOT_READY"
+endchoice
+
+config CMD_GET_BARCODE_COMMAND_NOT_READY_TIMEOUT
+    int "Command Answer Timeout (ms)"
+    default 1000
+endmenu
+
+menu "CMD_SHAFTS_ON"
+choice
+    prompt "Set CMD_SHAFTS_ON status"
+    default CMD_SHAFTS_ON_OK
+
+config CMD_SHAFTS_ON_OK
+    bool "STATUS_OK"
+config CMD_SHAFTS_ON_STATUS_ERROR
+    bool "STATUS_ERROR"
+
+endchoice
+
+config CMD_SHAFTS_ON_COMMAND_ANSWER_TIMEOUT
+    int "Command Answer Timeout (ms)"
+    default 1000
+endmenu
+
+menu "CMD_SHAFTS_OFF"
+choice
+    prompt "Set CMD_SHAFTS_OFF status"
+    default CMD_SHAFTS_OFF_OK
+
+config CMD_SHAFTS_OFF_OK
+    bool "STATUS_OK"
+
+config CMD_SHAFTS_OFF_STATUS_ERROR
+    bool "STATUS_ERROR"
+
+endchoice
+
+config CMD_SHAFTS_OFF_COMMAND_ANSWER_TIMEOUT
+    int "Command Answer Timeout (ms)"
+    default 1000
+endmenu
+
+menu "CMD_OPEN_SHAFTS"
+choice
+    prompt "Set CMD_OPEN_SHAFTS status"
+    default CMD_OPEN_SHAFTS_OK
+
+config CMD_OPEN_SHAFTS_OK
+    bool "STATUS_OK"
+
+config CMD_OPEN_SHAFTS_STATUS_ERROR
+    bool "STATUS_ERROR"
+
+endchoice
+
+config CMD_OPEN_SHAFTS_COMMAND_ANSWER_TIMEOUT
+    int "Command Answer Timeout (ms)"
+    default 1000
+endmenu
+
+menu "CMD_CLOSE_SHAFTS"
+choice
+    prompt "Set CMD_CLOSE_SHAFTS status"
+    default CMD_CLOSE_SHAFTS_OK
+
+config CMD_CLOSE_SHAFTS_OK
+    bool "STATUS_OK"
+config CMD_CLOSE_SHAFTS_STATUS_ERROR
+    bool "STATUS_ERROR"
+
+endchoice
+
+config CMD_CLOSE_SHAFTS_COMMAND_ANSWER_TIMEOUT
+    int "Command Answer Timeout (ms)"
+    default 1000
+endmenu
+
+menu "CMD_IS_BOTTLE_FALL"
+choice
+    prompt "Set CMD_IS_BOTTLE_FALL status"
+    default CMD_IS_BOTTLE_FALL_OK
+
+config CMD_IS_BOTTLE_FALL_OK
+    bool "STATUS_OK"
+
+config CMD_IS_BOTTLE_FALL_STATUS_ERROR
+    bool "STATUS_ERROR"
+
+config CMD_IS_BOTTLE_FALL_STATUS_NOT_READY
+    bool "STATUS_NOT_READY"
+
+endchoice
+
+config CMD_IS_BOTTLE_FALL_COMMAND_NOT_READY_TIMEOUT
+    int "NOT_READY Timeout (ms)"
+    default 1000
+endmenu
+
+menu "CMD_ON_SHREDER"
+choice
+    prompt "Set CMD_ON_SHREDER status"
+    default CMD_ON_SHREDER_OK
+
+config CMD_ON_SHREDER_OK
+    bool "STATUS_OK"
+
+config CMD_ON_SHREDER_STATUS_ERROR
+    bool "STATUS_ERROR"
+
+endchoice
+
+config CMD_ON_SHREDER_COMMAND_ANSWER_TIMEOUT
+    int "Command Answer Timeout (ms)"
+    default 1000
+endmenu
+
+menu "CMD_OFF_SHREDER"
+choice
+    prompt "Set CMD_OFF_SHREDER status"
+    default CMD_OFF_SHREDER_OK
+
+config CMD_OFF_SHREDER_OK
+    bool "STATUS_OK"
+
+config CMD_OFF_SHREDER_STATUS_ERROR
+    bool "STATUS_ERROR"
+
+endchoice
+
+config CMD_OFF_SHREDER_COMMAND_ANSWER_TIMEOUT
+    int "Command Answer Timeout (ms)"
+    default 1000
+endmenu
+
+menu "CMD_GET_COMMAND_STATUS"
+    choice
+    prompt "Set ESP ADDRESS"
+    default ESP_MOTORS_0
+
+config ESP_MOTORS_0
+    int 0
+
+config ESP_PERIPH_1
+    int 1
+
+endchoice
+
+choice
+    prompt "Set CMD_GET_COMMAND_STATUS status"
+    default CMD_GET_COMMAND_STATUS_OK
+
+config CMD_GET_COMMAND_STATUS_OK
+    bool "STATUS_OK"
+
+config CMD_GET_COMMAND_STATUS_STATUS_ERROR
+    bool "STATUS_ERROR"
+
+endchoice
+
+config CMD_GET_COMMAND_STATUS_COMMAND_ANSWER_TIMEOUT
+    int "Command Answer Timeout (ms)"
+    default 1000
+endmenu
+
+menu "CMD_GET_ALERT_DATA"
+choice
+    prompt "Set CMD_GET_ALERT_DATA status"
+    default CMD_GET_ALERT_DATA_OK
+
+config CMD_GET_ALERT_DATA_OK
+    bool "STATUS_OK"
+
+config CMD_GET_ALERT_DATA_STATUS_ERROR
+    bool "STATUS_ERROR"
+
+endchoice
+
+config CMD_GET_ALERT_DATA_COMMAND_ANSWER_TIMEOUT
+    int "Command Answer Timeout (ms)"
+    default 1000
+endmenu
+
+menu "CMD_IS_HAND_NOT_IN"
+choice
+    prompt "Set CMD_IS_HAND_IN status"
+    default CMD_IS_HAND_IN_OK
+
+config CMD_IS_HAND_NOT_IN_OK
+    bool "STATUS_OK"
+config CMD_IS_HAND_NOT_IN_STATUS_ERROR
+    bool "STATUS_ERROR"
+config CMD_IS_HAND_NOT_IN_STATUS_NOT_READY
+    bool "STATUS_NOT_READY"
+endchoice
+
+config CMD_IS_HAND_IN_COMMAND_NOT_READY_TIMEOUT
+    int "NOT_READY Timeout (ms)"
+    default 1000
+endmenu
+
+endmenu

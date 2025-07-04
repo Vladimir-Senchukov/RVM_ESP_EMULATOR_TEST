@@ -1,0 +1,27 @@
+{
+    "idf.openOcdConfigs": [
+        "interface/ftdi/esp32_devkitj_v1.cfg",
+        "target/esp32s3.cfg"
+    ],
+    "idf.portWin": "COM18",
+    "idf.flashType": "UART",
+    "idf.customExtraVars": {
+        "IDF_TARGET": "esp32s3"
+    },
+    "files.associations": {
+        "rvm_bl.h": "c",
+        "comunication.h": "c",
+        "step_motor_bl.h": "c",
+        "command_functions.h": "c",
+        "cstdlib": "c",
+        "led_tasks.h": "c",
+        "command_handler.h": "c",
+        "string.h": "c",
+        "led_diaphragm_tasks.h": "c",
+        "diaphragm_tasks.h": "c",
+        "stepper_motor.h": "c",
+        "gpio.h": "c",
+        "rs_485_driver.h": "c",
+        "rvm_protocol_types.h": "c"
+    }
+}
