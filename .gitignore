@@ -1,0 +1,19 @@
+# Об'єктні файли
+*.o
+*.obj
+*.lo
+
+# Службові файли компіляції
+*.elf
+*.bin
+*.map
+*.hex
+*.a
+*.d
+
+# Каталоги CMake
+/build
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
