@@ -1,9 +1,0 @@
-C:/Users/User/Desktop/RVM_DEMO/Project/RVM_for_tests/main/Kconfig.projbuild:251: warning: style: quotes recommended around '0' in 'int 0'
-C:/Users/User/Desktop/RVM_DEMO/Project/RVM_for_tests/main/Kconfig.projbuild:254: warning: style: quotes recommended around '1' in 'int 1'
-warning: the default selection CMD_IS_HAND_IN_OK (undefined) of <choice> (defined at C:/Users/User/Desktop/RVM_DEMO/Project/RVM_for_tests/main/Kconfig.projbuild:85) is not contained in the choice
-warning: <choice> (defined at C:/Users/User/Desktop/RVM_DEMO/Project/RVM_for_tests/main/Kconfig.projbuild:246) defined with type int
-warning: the default selection CMD_IS_HAND_IN_OK (undefined) of <choice> (defined at C:/Users/User/Desktop/RVM_DEMO/Project/RVM_for_tests/main/Kconfig.projbuild:294) is not contained in the choice
-warning: the value '' is invalid for ESP_MOTORS_0 (defined at C:/Users/User/Desktop/RVM_DEMO/Project/RVM_for_tests/main/Kconfig.projbuild:250), which has type int -- assignment ignored
-warning: the value '' is invalid for ESP_PERIPH_1 (defined at C:/Users/User/Desktop/RVM_DEMO/Project/RVM_for_tests/main/Kconfig.projbuild:253), which has type int -- assignment ignored
-Compiler supported targets: xtensa-esp32s3-elf
-

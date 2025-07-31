@@ -68,31 +68,23 @@ config CMD_LED_RED_COMMAND_ANSWER_TIMEOUT
     default 1000
 endmenu
 
-menu "CMD_GET_BOTTLE_STATUS"
+menu "CMD_GET_WEIGHT"
 choice
-    prompt "Set CMD_GET_BOTTLE_STATUS status"
-    default CMD_GET_BOTTLE_STATUS_OK
+    prompt "Set CMD_GET_WEIGHT status"
+    default CMD_GET_WEIGHT_OK
 
-config CMD_GET_BOTTLE_STATUS_OK
+config CMD_GET_WEIGHT_STATUS_OK
     bool "STATUS_OK"
-config CMD_GET_BOTTLE_STATUS_STATUS_ERROR
+config CMD_GET_WEIGHT_STATUS_ERROR
     bool "STATUS_ERROR"
-config CMD_GET_BOTTLE_STATUS_STATUS_NOT_READY
-    bool "STATUS_NOT_READY"
 
 endchoice
 
-choice
-    prompt "Set CMD_IS_HAND_IN error type"
-    default CMD_IS_HAND_IN_OK
+config CMD_GET_WEIGHT_WEIGHT
+    int "Weight (g)"
+    default 32
 
-config CMD_GET_BOTTLE_STATUS_HEAVY_WEIGHT_ERROR
-    bool "HEAVY_WEIGHT_ERROR"
-config CMD_GET_BOTTLE_STATUS_NO_BARCODE
-    bool "STATUS_ERROR"
-endchoice
-
-config CMD_GET_BOTTLE_STATUS_COMMAND_NOT_READY_TIMEOUT
+config CMD_GET_WEIGHT_TIMEOUT
     int "Command Answer Timeout (ms)"
     default 1000
 endmenu
@@ -106,8 +98,6 @@ config CMD_GET_BARCODE_OK
     bool "STATUS_OK"
 config CMD_GET_BARCODE_STATUS_ERROR
     bool "STATUS_ERROR"
-config CMD_GET_BARCODE_STATUS_STATUS_NOT_READY
-    bool "STATUS_NOT_READY"
 endchoice
 
 config CMD_GET_BARCODE_COMMAND_NOT_READY_TIMEOUT
@@ -195,9 +185,6 @@ config CMD_IS_BOTTLE_FALL_OK
 
 config CMD_IS_BOTTLE_FALL_STATUS_ERROR
     bool "STATUS_ERROR"
-
-config CMD_IS_BOTTLE_FALL_STATUS_NOT_READY
-    bool "STATUS_NOT_READY"
 
 endchoice
 
@@ -299,12 +286,106 @@ config CMD_IS_HAND_NOT_IN_OK
     bool "STATUS_OK"
 config CMD_IS_HAND_NOT_IN_STATUS_ERROR
     bool "STATUS_ERROR"
-config CMD_IS_HAND_NOT_IN_STATUS_NOT_READY
-    bool "STATUS_NOT_READY"
 endchoice
 
 config CMD_IS_HAND_IN_COMMAND_NOT_READY_TIMEOUT
     int "NOT_READY Timeout (ms)"
+    default 1000
+endmenu
+
+menu "CMD_OPEN_LOCK_APP"
+choice
+    prompt "Set CMD_OPEN_LOCK_APP status"
+    default CMD_OPEN_LOCK_APP
+
+config CMD_OPEN_LOCK_APP_OK
+    bool "STATUS_OK"
+config CMD_OPEN_LOCK_APP_STATUS_ERROR
+    bool "STATUS_ERROR"
+endchoice
+
+config CMD_OPEN_LOCK_APP_TIMEOUT
+    int "Timeout (ms)"
+    default 1000
+endmenu
+
+menu "CMD_CLOSE_LOCK_APP"
+choice
+    prompt "Set CMD_CLOSE_LOCK_APP status"
+    default CMD_CLOSE_LOCK_APP
+
+config CMD_CLOSE_LOCK_APP_OK
+    bool "STATUS_OK"
+config CMD_CLOSE_LOCK_APP_STATUS_ERROR
+    bool "STATUS_ERROR"
+endchoice
+
+config CMD_CLOSE_LOCK_APP_TIMEOUT
+    int "Timeout (ms)"
+    default 1000
+endmenu
+
+menu "CMD_OPEN_LOCK_BOX"
+choice
+    prompt "Set CMD_OPEN_LOCK_BOX status"
+    default CMD_OPEN_LOCK_BOX
+
+config CMD_OPEN_LOCK_BOX_OK
+    bool "STATUS_OK"
+config CMD_OPEN_LOCK_BOX_STATUS_ERROR
+    bool "STATUS_ERROR"
+endchoice
+
+config CMD_OPEN_LOCK_BOX_TIMEOUT
+    int "Timeout (ms)"
+    default 1000
+endmenu
+
+menu "CMD_CLOSE_LOCK_BOX"
+choice
+    prompt "Set CMD_CLOSE_LOCK_BOX status"
+    default CMD_CLOSE_LOCK_BOX
+
+config CMD_CLOSE_LOCK_BOX_OK
+    bool "STATUS_OK"
+config CMD_CLOSE_LOCK_BOX_STATUS_ERROR
+    bool "STATUS_ERROR"
+endchoice
+
+config CMD_CLOSE_LOCK_BOX_TIMEOUT
+    int "Timeout (ms)"
+    default 1000
+endmenu
+
+menu "CMD_DEBLOCK_SHAFTS"
+choice
+    prompt "Set CMD_DEBLOCK_SHAFTS status"
+    default CMD_DEBLOCK_SHAFTS
+
+config CMD_DEBLOCK_SHAFTS_OK
+    bool "STATUS_OK"
+config CMD_DEBLOCK_SHAFTS_STATUS_ERROR
+    bool "STATUS_ERROR"
+endchoice
+
+config CMD_DEBLOCK_SHAFTS_TIMEOUT
+    int "Timeout (ms)"
+    default 1000
+endmenu
+
+menu "CMD_IS_BOX_FULL"
+choice
+    prompt "Set CMD_IS_BOX_FULL status"
+    default CMD_IS_BOX_FULL
+
+config CMD_IS_BOX_FULL_OK
+    bool "STATUS_OK"
+config CMD_IS_BOX_FULL_STATUS_ERROR
+    bool "STATUS_ERROR"
+endchoice
+
+config CMD_IS_BOX_FULL_TIMEOUT
+    int "Timeout (ms)"
     default 1000
 endmenu
 
