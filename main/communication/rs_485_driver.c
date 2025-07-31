@@ -4,8 +4,8 @@
 #include "driver/uart.h"
 #include "driver/gpio.h"
 
-#define TX_UART_PIN GPIO_NUM_41
-#define RX_UART_PIN GPIO_NUM_42
+#define TX_UART_PIN GPIO_NUM_42
+#define RX_UART_PIN GPIO_NUM_41
 #define DE_PIN GPIO_NUM_21
 #define RE_PIN GPIO_NUM_47
 #define BUF_SIZE 256
