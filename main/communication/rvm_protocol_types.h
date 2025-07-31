@@ -12,7 +12,7 @@ typedef enum {
     CMD_LED_GREEN = 3, // Включить зеленый светодиод
     CMD_LED_RED = 4,  // Включить красный светодиод
 
-    CMD_GET_BOTTLE_STATUS = 5, // Получить статус бутылки
+    CMD_GET_WEIGHT = 5, // Получить статус бутылки
 
     CMD_GET_BARCODE = 6, // Получить штрих-код
 
@@ -30,8 +30,17 @@ typedef enum {
     CMD_GET_COMMAND_STATUS = 14, // Запит статусу по виконанню команд при цій команді в полі data треба вказати номер команди і тоді ESP32 віддасть останній статус по тій команді
     
     CMD_GET_ALERT_DATA = 15,
+    CMD_IS_NO_HAND = 16,
 
-    CMD_IS_HAND_NOT_IN = 16
+    CMD_OPEN_LOCK_APP = 17,
+    CMD_CLOSE_LOCK_APP = 18,
+
+    CMD_OPEN_LOCK_BOX = 19,
+    CMD_CLOSE_LOCK_BOX = 20,
+
+    CMD_DEBLOCK_SHAFTS = 21,
+
+    CMD_IS_BOX_FULL = 22
 } commands_t;
 
 typedef enum {
@@ -63,6 +72,7 @@ typedef struct{
     commands_t COMMAND;
     status_t STATUS;
     char* data;
+    char* logs;
 }json_dto_t;
 
 #endif

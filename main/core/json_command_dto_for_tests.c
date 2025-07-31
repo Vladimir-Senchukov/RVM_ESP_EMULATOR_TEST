@@ -49,17 +49,14 @@ json_dto_t CMD_LED_RED_JSON_DTO = {
     #endif
 };
 
-json_dto_t CMD_GET_BOTTLE_STATUS_JSON_DTO = {
+json_dto_t CMD_GET_WEIGHT_JSON_DTO = {
     .address = ESP_PERIPH_ADDR_1,
-    .COMMAND = CMD_GET_BOTTLE_STATUS,
-    #ifdef CONFIG_CMD_GET_BOTTLE_STATUS_OK
+    .COMMAND = CMD_GET_WEIGHT,
+    #ifdef CONFIG_CMD_GET_STATUS_OK
     .STATUS = CMD_STATUS_OK,
     .data = ""
-    #elif defined(CONFIG_CMD_GET_BOTTLE_STATUS_STATUS_ERROR)
+    #elif defined(CONFIG_CMD_GET_STATUS_ERROR)
     .STATUS = CMD_STATUS_ERROR,
-    .data = "HEAVY_WEIGHT"
-    #elif defined(CONFIG_CMD_GET_BOTTLE_STATUS_STATUS_NOT_READY)
-    .STATUS = CMD_STATUS_NOT_READY,
     .data = ""
     #endif
 };
@@ -72,9 +69,6 @@ json_dto_t CMD_GET_BARCODE_JSON_DTO = {
     .data = "4823063126298"
     #elif defined(CONFIG_CMD_GET_BARCODE_STATUS_ERROR)
     .STATUS = CMD_STATUS_ERROR,
-    .data = ""
-    #elif defined(CONFIG_CMD_GET_BARCODE_STATUS_STATUS_NOT_READY)
-    .STATUS = CMD_STATUS_NOT_READY,
     .data = ""
     #endif
 };
@@ -192,7 +186,7 @@ json_dto_t CMD_GET_ALERT_DATA_JSON_DTO = {
 
 json_dto_t CMD_IS_HAND_NOT_IN_JSON_DTO = {
     .address = ESP_PERIPH_ADDR_1,
-    .COMMAND = CMD_IS_HAND_NOT_IN,
+    .COMMAND = CMD_IS_NO_HAND,
     #ifdef CONFIG_CMD_IS_HAND_NOT_IN_OK
     .STATUS = CMD_STATUS_OK,
     .data = ""
@@ -201,6 +195,78 @@ json_dto_t CMD_IS_HAND_NOT_IN_JSON_DTO = {
     .data = ""
     #elif defined(CONFIG_CMD_IS_HAND_NOT_IN_STATUS_NOT_READY)
     .STATUS = CMD_STATUS_NOT_READY,
+    .data = ""
+    #endif
+};
+
+json_dto_t CMD_OPEN_LOCK_APP_JSON_DTO = {
+    .address = ESP_MOTORS_ADDR_0,
+    .COMMAND = CMD_OPEN_LOCK_APP,
+    #ifdef CONFIG_CMD_IS_HAND_NOT_IN_OK
+    .STATUS = CMD_STATUS_OK,
+    .data = ""
+    #elif defined(CONFIG_CMD_IS_HAND_NOT_IN_STATUS_ERROR)
+    .STATUS = CMD_STATUS_ERROR,
+    .data = ""
+    #endif
+};
+
+json_dto_t CMD_CLOSE_LOCK_APP_JSON_DTO = {
+    .address = ESP_MOTORS_ADDR_0,
+    .COMMAND = CMD_CLOSE_LOCK_APP,
+    #ifdef CONFIG_CMD_IS_HAND_NOT_IN_OK
+    .STATUS = CMD_STATUS_OK,
+    .data = ""
+    #elif defined(CONFIG_CMD_IS_HAND_NOT_IN_STATUS_ERROR)
+    .STATUS = CMD_STATUS_ERROR,
+    .data = ""
+    #endif
+};
+
+json_dto_t CMD_OPEN_LOCK_BOX_JSON_DTO = {
+    .address = ESP_MOTORS_ADDR_0,
+    .COMMAND = CMD_OPEN_LOCK_BOX,
+    #ifdef CONFIG_CMD_IS_HAND_NOT_IN_OK
+    .STATUS = CMD_STATUS_OK,
+    .data = ""
+    #elif defined(CONFIG_CMD_IS_HAND_NOT_IN_STATUS_ERROR)
+    .STATUS = CMD_STATUS_ERROR,
+    .data = ""
+    #endif
+};
+
+json_dto_t CMD_CLOSE_LOCK_BOX_JSON_DTO = {
+    .address = ESP_MOTORS_ADDR_0,
+    .COMMAND = CMD_CLOSE_LOCK_BOX,
+    #ifdef CONFIG_CMD_IS_HAND_NOT_IN_OK
+    .STATUS = CMD_STATUS_OK,
+    .data = ""
+    #elif defined(CONFIG_CMD_IS_HAND_NOT_IN_STATUS_ERROR)
+    .STATUS = CMD_STATUS_ERROR,
+    .data = ""
+    #endif
+};
+
+json_dto_t CMD_DEBLOCK_SHAFTS_JSON_DTO = {
+    .address = ESP_MOTORS_ADDR_0,
+    .COMMAND = CMD_DEBLOCK_SHAFTS,
+    #ifdef CONFIG_CMD_IS_HAND_NOT_IN_OK
+    .STATUS = CMD_STATUS_OK,
+    .data = ""
+    #elif defined(CONFIG_CMD_IS_HAND_NOT_IN_STATUS_ERROR)
+    .STATUS = CMD_STATUS_ERROR,
+    .data = ""
+    #endif
+};
+
+json_dto_t CMD_IS_BOX_FULL_JSON_DTO = {
+    .address = ESP_PERIPH_ADDR_1,
+    .COMMAND = CMD_IS_BOX_FULL,
+    #ifdef CONFIG_CMD_IS_HAND_NOT_IN_OK
+    .STATUS = CMD_STATUS_OK,
+    .data = ""
+    #elif defined(CONFIG_CMD_IS_HAND_NOT_IN_STATUS_ERROR)
+    .STATUS = CMD_STATUS_ERROR,
     .data = ""
     #endif
 };

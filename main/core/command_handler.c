@@ -37,10 +37,10 @@ command_handler_status_t command_handler(int cmd){
         xQueueSend(tx_json_dto_queue, &CMD_LED_RED_JSON_DTO, portMAX_DELAY);
         break;
 
-    case CMD_GET_BOTTLE_STATUS:
+    case CMD_GET_WEIGHT:
         ESP_LOGI("command_handler", "start command: CMD_GET_BOTTLE_STATUS");
-        vTaskDelay(CONFIG_CMD_GET_BOTTLE_STATUS_COMMAND_NOT_READY_TIMEOUT / portTICK_PERIOD_MS);
-        xQueueSend(tx_json_dto_queue, &CMD_GET_BOTTLE_STATUS_JSON_DTO, portMAX_DELAY);
+        vTaskDelay(CONFIG_CMD_GET_WEIGHT_TIMEOUT / portTICK_PERIOD_MS);
+        xQueueSend(tx_json_dto_queue, &CMD_GET_WEIGHT_JSON_DTO, portMAX_DELAY);
         break;
         
     case CMD_GET_BARCODE:
@@ -102,11 +102,43 @@ command_handler_status_t command_handler(int cmd){
         vTaskDelay(CONFIG_CMD_GET_ALERT_DATA_COMMAND_ANSWER_TIMEOUT / portTICK_PERIOD_MS);
         xQueueSend(tx_json_dto_queue, &CMD_GET_ALERT_DATA_JSON_DTO, portMAX_DELAY);
         break;
-    case CMD_IS_HAND_NOT_IN:
+    case CMD_IS_NO_HAND:
         ESP_LOGI("command_handler", "start command: CMD_IS_HAND_NOT_IN");
         vTaskDelay(CONFIG_CMD_IS_HAND_IN_COMMAND_NOT_READY_TIMEOUT / portTICK_PERIOD_MS);
         xQueueSend(tx_json_dto_queue, &CMD_IS_HAND_NOT_IN_JSON_DTO, portMAX_DELAY);
 
+    case CMD_OPEN_LOCK_APP:
+        ESP_LOGI("command_handler", "start command: CMD_IS_HAND_NOT_IN");
+        vTaskDelay(CONFIG_CMD_OPEN_LOCK_APP_TIMEOUT / portTICK_PERIOD_MS);
+        xQueueSend(tx_json_dto_queue, &CMD_OPEN_LOCK_APP_JSON_DTO, portMAX_DELAY);
+        break;
+
+    case CMD_CLOSE_LOCK_APP:
+        ESP_LOGI("command_handler", "start command: CMD_IS_HAND_NOT_IN");
+        vTaskDelay( CONFIG_CMD_CLOSE_LOCK_APP_TIMEOUT/ portTICK_PERIOD_MS);
+        xQueueSend(tx_json_dto_queue, &CMD_CLOSE_LOCK_APP_JSON_DTO, portMAX_DELAY);
+        break;
+
+    case CMD_OPEN_LOCK_BOX:
+        ESP_LOGI("command_handler", "start command: CMD_IS_HAND_NOT_IN");
+        vTaskDelay( CONFIG_CMD_OPEN_LOCK_BOX_TIMEOUT/ portTICK_PERIOD_MS);
+        xQueueSend(tx_json_dto_queue, &CMD_OPEN_LOCK_BOX_JSON_DTO, portMAX_DELAY);
+        break;
+
+    case CMD_CLOSE_LOCK_BOX:
+        ESP_LOGI("command_handler", "start command: CMD_IS_HAND_NOT_IN");
+        vTaskDelay( CONFIG_CMD_CLOSE_LOCK_BOX_TIMEOUT/ portTICK_PERIOD_MS);
+        xQueueSend(tx_json_dto_queue, &CMD_CLOSE_LOCK_BOX_JSON_DTO, portMAX_DELAY);
+        break;
+    case CMD_DEBLOCK_SHAFTS:
+        ESP_LOGI("command_handler", "start command: CMD_IS_HAND_NOT_IN");
+        vTaskDelay( CONFIG_CMD_DEBLOCK_SHAFTS_TIMEOUT/ portTICK_PERIOD_MS);
+        xQueueSend(tx_json_dto_queue, &CMD_DEBLOCK_SHAFTS_JSON_DTO, portMAX_DELAY);
+        break;
+    case CMD_IS_BOX_FULL:
+        ESP_LOGI("command_handler", "start command: CMD_IS_HAND_NOT_IN");
+        vTaskDelay( CONFIG_CMD_IS_BOX_FULL_TIMEOUT/ portTICK_PERIOD_MS);
+        xQueueSend(tx_json_dto_queue, &CMD_IS_BOX_FULL_JSON_DTO, portMAX_DELAY);
         break;
     default:
         ESP_LOGE("command_hendler", "Unknown command: %d", cmd);
